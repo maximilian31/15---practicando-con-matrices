@@ -1,0 +1,50 @@
+/*
+Crear una matriz de 2 filas y 5 columnas. Realizar la carga de componentes por columna 
+(es decir primero ingresar toda la primer columna, luego la segunda columna y así sucesivamente)
+Imprimir luego la matriz.
+*/
+
+#include "iostream"
+using namespace std;
+class Ejerc {
+    private:
+        int matriz[2][5];
+    public:
+        void cargar();
+        void imprimir();
+};
+
+//FUNCIONES
+    void Ejerc::cargar()
+    {
+        cout << "Cargar los elementos de la matriz" << endl;
+        for(int i=0; i<5;i++)
+        {
+            for(int j=0; j<2; j++)
+            {
+                cin >> matriz[j][i];
+            }
+        }
+    }
+    
+    void Ejerc::imprimir()
+    {
+      cout << "La matriz quedo asi" << endl;
+        for(int i=0; i<2;i++)
+        {
+            for(int j=0; j<5; j++)
+            {
+                cout << matriz[i][j] << " " ;
+            }
+            cout << "\n";
+        }
+        cout << "\n";  
+    }
+
+int main()
+{
+    Ejerc colum;
+    colum.cargar();
+    colum.imprimir();
+    return 0;
+}
