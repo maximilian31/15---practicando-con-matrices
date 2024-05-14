@@ -1,0 +1,49 @@
+/*
+Crear una matriz de 3 filas por 5 columnas con elementos de tipo int, 
+cargar sus componentes y luego imprimirlas.
+*/
+#include "iostream"
+using namespace std;
+class Ejerc{
+    private:
+        int matraca[3][5]; // primero filas despues columnas
+    public:
+        void cargar();
+        void imprimir();
+};
+
+    void Ejerc::cargar()
+    {
+       for(int i=0; i<3;i++) // filas
+       {
+           for(int j=0; j<5;j++) // columnas
+           {
+               cout << "Cargar las matrices" << endl;
+               cin >> matraca[i][j];
+           }
+       }
+       cin.ignore();
+    }
+    
+    void Ejerc::imprimir()
+    {
+       for(int i=0; i<3;i++) // filas
+       {
+           for(int j=0; j<5;j++) // columnas
+           {
+               cout << matraca[i][j] << " ";
+               
+           }
+           cout << "\n";
+       } 
+       cin.get();
+       cin.get();
+    }
+    // De esta forma quedan bien organizadas las matrices
+int main()
+{
+    Ejerc kike;
+    kike.cargar();
+    kike.imprimir();
+    return 0;
+}
