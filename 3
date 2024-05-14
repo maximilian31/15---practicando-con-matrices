@@ -1,0 +1,82 @@
+/*
+Crear y cargar una matriz de 3 filas por 4 columnas.
+Imprimir la primer fila.
+Imprimir la última fila e imprimir la primer columna.
+*/
+
+#include "iostream"
+using namespace std;
+
+class Ejercicio {
+    private:
+        int matriz[3][4]; // 3 filas - 4 columnas
+    public:
+        void cargar();
+        void imprimirPrimer();
+        void imprimirUltima();
+        void imprimirColumna();
+};
+
+    void Ejercicio::cargar()
+    {
+        for(int i=0; i<3; i++)// filas
+        {
+            for(int j=0; j<4; j++)// columnas
+            {
+                cout << "Ingresar los componentes de la matriz" << endl;
+                cin >> matriz[i][j];
+            }
+        }
+        cin.ignore();
+    }
+    
+    void Ejercicio::imprimirPrimer()
+    {
+        cout << "Solo imprime la primera fila " << endl;
+        for(int i=0; i<1; i++)// es "i<1" asi imprime la primera fila
+        {
+            for(int j=0; j<4; j++)// columnas
+            {
+                cout << matriz[0][j] << " ";
+            }
+        }
+        cout << "\n";
+    }
+    
+    void Ejercicio::imprimirUltima()
+    {
+        cout << "Solo imprime la ultima fila " << endl;
+        for(int i=2; i<3; i++)// es "i=1" asi imprime la ultima fila
+        {
+            for(int j=0; j<4; j++)// columnas
+            {
+                
+                cout << matriz[2][j] << " ";
+            }
+        }
+        cout << "\n";
+    }
+    
+    void Ejercicio::imprimirColumna()
+    {
+        cout << "Solo imprime la primera columna " << endl;
+        for(int i=0; i<3; i++)// es "i<1" asi imprime la primera fila
+        {
+            for(int j=0; j<1; j++)// columnas
+            {
+                
+                cout << matriz[i][0] << " ";
+            }
+        }  
+        cout << "\n";
+    }
+    
+int main()
+{
+    Ejercicio matrices;
+    matrices.cargar();
+    matrices.imprimirPrimer();
+    matrices.imprimirUltima();
+    matrices.imprimirColumna();
+    return 0;
+}
